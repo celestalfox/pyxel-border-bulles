@@ -1,0 +1,43 @@
+def __init__(self, xbulle, ybulle, rbulle,ROUGE,vE,vY):
+        """
+        initialise les valeurs des attribut d'une bulle avec les paramètres xbulle, ybulle,
+        rbulle
+        """
+        self.x = xbulle
+        self.y = ybulle
+        self.r = rbulle
+        self.rd=rbulle
+        self.c=ROUGE
+        self.ve=vE
+        self.vy=vY
+        
+    def dessiner(self):
+        """
+        méthode à compléter vous-mêmes
+        """
+        pyxel.circ(self.x,self.y,self.r,self.c)# COMPLÉTER
+    
+    def deplacer(self):
+        """
+        déplace une bulle du bas vers le haut, retour en bas après 
+        """
+        self.x+=self.ve
+        self.y+=self.vy
+            
+
+        if self.x< self.r:
+            self.ve=-self.ve
+        
+        if self.x>LARG-self.r:
+            self.ve=-self.ve
+            
+        
+        if self.y< self.r:
+            self.vy=-self.vy
+        
+        if self.y>HAUT-self.r:
+            self.vy=- self.vy  
+            
+        
+            
+        
